@@ -1,0 +1,42 @@
+<%= form_with(model: roupa) do |form| %>
+  <% if roupa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(roupa.errors.count, "error") %> prohibited this roupa from being saved:</h2>
+
+      <ul>
+        <% roupa.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_roupa %>
+    <%= form.text_field :tipo_roupa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tamanho %>
+    <%= form.text_field :tamanho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :marca %>
+    <%= form.text_field :marca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ativo %>
+    <%= form.check_box :ativo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @acessorio.descricao %>
+</p>
+
+<p>
+  <strong>Tipo acessorio:</strong>
+  <%= @acessorio.tipo_acessorio %>
+</p>
+
+<p>
+  <strong>Tamanho:</strong>
+  <%= @acessorio.tamanho %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @acessorio.marca %>
+</p>
+
+<p>
+  <strong>Ativo:</strong>
+  <%= @acessorio.ativo %>
+</p>
+
+<%= link_to 'Edit', edit_acessorio_path(@acessorio) %> |
+<%= link_to 'Back', acessorios_path %>

@@ -1,0 +1,2 @@
+module CalcadosHelper
+end

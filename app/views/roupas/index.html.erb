@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Roupas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th>Tipo roupa</th>
+      <th>Tamanho</th>
+      <th>Marca</th>
+      <th>Ativo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roupas.each do |roupa| %>
+      <tr>
+        <td><%= roupa.descricao %></td>
+        <td><%= roupa.tipo_roupa %></td>
+        <td><%= roupa.tamanho %></td>
+        <td><%= roupa.marca %></td>
+        <td><%= roupa.ativo %></td>
+        <td><%= link_to 'Show', roupa %></td>
+        <td><%= link_to 'Edit', edit_roupa_path(roupa) %></td>
+        <td><%= link_to 'Destroy', roupa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roupa', new_roupa_path %>

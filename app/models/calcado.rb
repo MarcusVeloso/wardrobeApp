@@ -1,0 +1,2 @@
+class Calcado < ApplicationRecord
+end

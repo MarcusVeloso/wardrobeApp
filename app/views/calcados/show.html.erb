@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @calcado.descricao %>
+</p>
+
+<p>
+  <strong>Tipo calcado:</strong>
+  <%= @calcado.tipo_calcado %>
+</p>
+
+<p>
+  <strong>Tamanho:</strong>
+  <%= @calcado.tamanho %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @calcado.marca %>
+</p>
+
+<p>
+  <strong>Ativo:</strong>
+  <%= @calcado.ativo %>
+</p>
+
+<%= link_to 'Edit', edit_calcado_path(@calcado) %> |
+<%= link_to 'Back', calcados_path %>
