@@ -12,6 +12,9 @@
 
   <body>
   
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <div class="container">
     <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -19,11 +22,16 @@
     <span class="fs-4">Wardrobe App </span>
     </a>
 
-    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-      <%= link_to 'Roupas', roupas_path , class:"me-3 py-2 text-dark text-decoration-none"%>
-      <%= link_to 'Acessorios', acessorios_path , class:"me-3 py-2 text-dark text-decoration-none"%>
-      <%= link_to 'Calçados', calcados_path , class:"me-3 py-2 text-dark text-decoration-none"%>
-    </nav>
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <% if user_signed_in? %>
+        <%= link_to 'Roupas', roupas_path , class:"me-3 py-2 text-dark text-decoration-none"%>
+        <%= link_to 'Acessorios', acessorios_path , class:"me-3 py-2 text-dark text-decoration-none"%>
+        <%= link_to 'Calçados', calcados_path , class:"me-3 py-2 text-dark text-decoration-none"%>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"me-3 py-2 text-dark text-decoration-none"%>
+      <% else %>
+        <%= link_to 'Sign in', user_session_path , class:"me-3 py-2 text-dark text-decoration-none"%>
+      <% end %>
+      </nav>
     </div>
   </div>
   
