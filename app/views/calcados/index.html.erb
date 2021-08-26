@@ -1,15 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Calcados</h1>
+<div class="row">
+  <div class="col-11">
+    <h1>Calcados</h1>
+  </div>
+  <div class="col-1 text-right">
+    <%= link_to 'New', new_calcado_path, class:"btn btn-primary" %>
+  </div>
+</div>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Descricao</th>
       <th>Tipo calcado</th>
-      <th>Tamanho</th>
+      <th>Descrição</th>
       <th>Marca</th>
-      <th>Ativo</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +23,10 @@
   <tbody>
     <% @calcados.each do |calcado| %>
       <tr>
-        <td><%= calcado.descricao %></td>
         <td><%= calcado.tipo_calcado %></td>
-        <td><%= calcado.tamanho %></td>
+        <td><%= calcado.descricao %></td>
         <td><%= calcado.marca %></td>
-        <td><%= calcado.ativo %></td>
+        
         <td><%= link_to 'Show', calcado %></td>
         <td><%= link_to 'Edit', edit_calcado_path(calcado) %></td>
         <td><%= link_to 'Destroy', calcado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,7 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Calcado', new_calcado_path %>

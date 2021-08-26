@@ -3,7 +3,7 @@ class CalcadosController < ApplicationController
 
   # GET /calcados or /calcados.json
   def index
-    @calcados = Calcado.all
+    @calcados = Calcado.order("descricao")
   end
 
   # GET /calcados/1 or /calcados/1.json
@@ -25,8 +25,8 @@ class CalcadosController < ApplicationController
 
     respond_to do |format|
       if @calcado.save
-        format.html { redirect_to @calcado, notice: "Calcado was successfully created." }
-        format.json { render :show, status: :created, location: @calcado }
+        format.html { redirect_to calcados_path, notice: "Calcado was successfully created." }
+        format.json { render :index, status: :created, location: @calcado }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @calcado.errors, status: :unprocessable_entity }
@@ -38,8 +38,8 @@ class CalcadosController < ApplicationController
   def update
     respond_to do |format|
       if @calcado.update(calcado_params)
-        format.html { redirect_to @calcado, notice: "Calcado was successfully updated." }
-        format.json { render :show, status: :ok, location: @calcado }
+        format.html { redirect_to calcados_path, notice: "Calcado was successfully updated." }
+        format.json { render :index, status: :ok, location: @calcado }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @calcado.errors, status: :unprocessable_entity }
