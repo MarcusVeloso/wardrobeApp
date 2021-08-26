@@ -5,6 +5,7 @@ class CreateRoupas < ActiveRecord::Migration[6.1]
       t.string :tipo_roupa
       t.string :tamanho
       t.string :marca
+      t.boolean :favorito
       t.boolean :ativo
 
       t.timestamps
