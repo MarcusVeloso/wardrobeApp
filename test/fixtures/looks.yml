@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  ocasiao: MyString
+  calcado: one
+  ativo: false
+
+two:
+  descricao: MyString
+  ocasiao: MyString
+  calcado: two
+  ativo: false

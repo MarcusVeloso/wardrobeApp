@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @look.descricao %>
+</p>
+
+<p>
+  <strong>Ocasiao:</strong>
+  <%= @look.ocasiao %>
+</p>
+
+<p>
+  <strong>Calcado:</strong>
+  <%= @look.calcado_id %>
+</p>
+
+<p>
+  <strong>Ativo:</strong>
+  <%= @look.ativo %>
+</p>
+
+<%= link_to 'Edit', edit_look_path(@look) %> |
+<%= link_to 'Back', looks_path %>
